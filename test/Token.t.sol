@@ -39,3 +39,5 @@ contract TokenTest is Test {
         vm.stopPrank();
     }
 }
+
+// ------NOTE------ | This test might fail because 0.6 solidity compiler version was not working with the framework. If it works with you then great.
