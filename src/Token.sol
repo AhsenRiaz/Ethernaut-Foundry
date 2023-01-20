@@ -6,7 +6,7 @@ contract Token {
     mapping(address => uint) balances;
     uint public totalSupply;
 
-    constructor(uint _initialSupply) public {
+    constructor(uint _initialSupply)  {
         // set initial to msg.sender
         // set total supply
         balances[msg.sender] = totalSupply = _initialSupply;
