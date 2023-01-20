@@ -33,15 +33,13 @@ contract CoinFlipTest is Test {
 
         uint8 consecutiveWinsToReach = 2;
 
-        console.log("BlockValue", blockValue);
-
         // start transaction as attacker
         vm.startPrank(attacker);
 
         while (coinFlip.consecutiveWins() < consecutiveWinsToReach) {
             // create transaction
             coinFlip.flip(blockValue == 1 ? true : false);
-            // each transaction create a new block using vm.roll()
+            // move block.number forward by a given number of blocks
             utils.mineBlocks(1);
         }
     }
